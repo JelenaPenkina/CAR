@@ -149,6 +149,35 @@ namespace CAR.Controllers
             };
 
             return View(car);
+        }   
+        // GET: /Cars/Delete
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var car = await _carService.GetAsync(id);
+
+            if (car == null)
+            {
+                return NotFound();
+            }
+
+            return View(car);
+        }
+
+        // POST: /Cars/Delete/
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var result = await _carService.Delete(id);
+
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+            TempData["SuccessMessage"] = $"Car '{result.Make} {result.Model}' deleted successfully!";
+            return RedirectToAction(nameof(Index));
         }
     }
 }

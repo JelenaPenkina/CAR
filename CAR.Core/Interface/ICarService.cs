@@ -8,6 +8,7 @@ namespace CAR.Core.Interface
         Task<Car> Create(CarDto dto);
         Task<Car> Update(CarDto dto);
         Task<Car> GetAsync(int id);
+        Task<Car> Delete(int id);
 
     }
 }

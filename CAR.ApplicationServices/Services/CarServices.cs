@@ -64,5 +64,26 @@ namespace CAR.ApplicationServices.Services
 
             return result;
         }
+        public async Task<Car> Delete(int id)
+        {
+            var car = await _context.Cars
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            if (car == null)
+            {
+                return null;
+            }
+
+            _context.Cars.Remove(car);
+            await _context.SaveChangesAsync();
+
+            return car;
+        }
+
+        public async Task<IEnumerable<Car>> GetAllAsync()
+        {
+            var result = await _context.Cars.ToListAsync();
+            return result;
+        }
     }
 }
