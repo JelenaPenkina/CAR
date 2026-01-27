@@ -2,6 +2,7 @@
 using CAR.Core.Dto;
 using CAR.Core.Interface;
 using CAR.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CAR.ApplicationServices.Services
 {
@@ -31,6 +32,37 @@ namespace CAR.ApplicationServices.Services
             await _context.SaveChangesAsync();
 
             return car;
+        }
+
+        public async Task<Car> Update(CarDto dto)
+        {
+            var car = await _context.Cars
+                .FirstOrDefaultAsync(x => x.Id == dto.Id);
+
+            if (car == null)
+            {
+                return null;
+            }
+
+            car.Make = dto.Make;
+            car.Model = dto.Model;
+            car.Year = dto.Year;
+            car.Color = dto.Color;
+            car.Price = dto.Price;
+            car.ModifiedAt = DateTime.Now;
+
+            _context.Cars.Update(car);
+            await _context.SaveChangesAsync();
+
+            return car;
+        }
+
+        public async Task<Car> GetAsync(int id)
+        {
+            var result = await _context.Cars
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            return result;
         }
     }
 }

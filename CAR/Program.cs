@@ -1,4 +1,5 @@
-using System;
+using CAR.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
