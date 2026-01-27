@@ -10,5 +10,6 @@ namespace CAR.Core.Interface
         Task<Car> GetAsync(int id);
         Task<Car> Delete(int id);
 
+        Task<IEnumerable<Car>> GetAllAsync();
     }
 }
