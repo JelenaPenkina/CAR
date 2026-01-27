@@ -1,0 +1,297 @@
+﻿﻿body {
+    background: radial-gradient(circle at top left, #1b1b1b, #0f0f0f 70%);
+    color: #eaeaea;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    background: #0d0d0d !important;
+    border-bottom: 1px solid #262626 !important;
+}
+
+.navbar-brand,
+.nav-link {
+    color: #ffffff !important;
+}
+
+    .nav-link:hover {
+        color: #4dabf7 !important;
+    }
+
+h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* TABLE */
+.table {
+    border-radius: 14px;
+    overflow: hidden;
+    background: #161616;
+    border: 1px solid #262626;
+    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+}
+
+    .table thead {
+        background: linear-gradient(90deg, #1c1c1c, #242424);
+        color: #ffffff;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+    }
+
+    .table th {
+        border-bottom: 2px solid #4dabf7 !important;
+        padding: 16px;
+    }
+
+    .table td {
+        border-color: #262626 !important;
+        padding: 14px;
+        color: #ddd;
+    }
+
+    .table tbody tr {
+        transition: 0.2s ease;
+    }
+
+        .table tbody tr:hover {
+            background: #1f1f1f;
+        }
+
+    /* ID column blue */
+    .table td:first-child {
+        color: #4dabf7;
+        font-weight: 600;
+    }
+
+    /* Price green */
+    .table td:nth-child(6) {
+        color: #51cf66;
+        font-weight: 600;
+    }
+
+/* FORMS */
+.form-table, .car-image-box {
+    background: #161616 !important;
+    border: 1px solid #262626 !important;
+    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+}
+
+.form-control {
+    background: #1f1f1f !important;
+    border: 1px solid #333 !important;
+    color: #fff !important;
+}
+
+    .form-control:focus {
+        border-color: #4dabf7 !important;
+        box-shadow: 0 0 0 0.2rem rgba(77,171,247,.25);
+    }
+
+/* BUTTONS */
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 8px 16px;
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #4dabf7, #1c7ed6);
+    border: none;
+}
+
+.btn-success {
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+    border: none;
+}
+
+.btn-warning {
+    background: linear-gradient(90deg, #f39c12, #e67e22);
+    border: none;
+}
+
+.btn-danger {
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    border: none;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+}
+
+/* FOOTER */
+footer {
+    background: #0d0d0d;
+    border-top: 1px solid #262626;
+    color: #ffffff;
+    text-align: center;
+}
+
+    footer a {
+        color: #ffffff !important;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+        footer a:hover {
+            color: #4dabf7 !important;
+        }
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+
+/*TABELI DISAIN - INDEX*/
+/* CARD AROUND TABLE */
+.table-card {
+    background: #141414;
+    border-radius: 16px;
+    padding: 20px 25px 25px 25px;
+    border: 1px solid #262626;
+    box-shadow: 0 0 35px rgba(0,0,0,0.7);
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #2c2c2c;
+}
+
+/* CUSTOM DARK TABLE */
+.table-dark-custom {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .table-dark-custom thead {
+        background: linear-gradient(90deg, #1b1b1b, #232323);
+    }
+
+    .table-dark-custom th {
+        padding: 14px;
+        text-align: left;
+        border-bottom: 2px solid #4dabf7;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .table-dark-custom td {
+        padding: 13px;
+        border-bottom: 1px solid #262626;
+        color: #ddd;
+    }
+
+    .table-dark-custom tr:hover {
+        background: #1d1d1d;
+    }
+
+/* ID sinine */
+.id-col {
+    color: #4dabf7;
+    font-weight: 600;
+}
+
+/* Hinnad rohelised */
+.price-col {
+    color: #51cf66;
+    font-weight: 600;
+}
+
+/* Nuppude joondus */
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Pealkiri */
+.page-title {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* No data text */
+.no-data {
+    color: #aaa;
+    margin-top: 10px;
+}
+
+/* Segamisesesk boostrapil kirjutada üle tabeli osa */
+.table-dark-custom,
+.table-dark-custom th,
+.table-dark-custom td {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+}
+
+    .table-dark-custom thead {
+        background: linear-gradient(90deg, #1b1b1b, #232323) !important;
+    }
+
+    .table-dark-custom tbody tr {
+        background-color: #1a1a1a !important;
+    }
+
+        .table-dark-custom tbody tr:hover {
+            background-color: #242424 !important;
+        }
+
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    --bs-table-accent-bg: transparent !important;
+}
+
+
+.table > :not(caption) > * > * {
+    border-bottom-color: #2c2c2c !important;
+}
+
+.table-dark-custom tbody tr {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+    .table-dark-custom tbody tr::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 100%;
+        background: linear-gradient(90deg, #00c6ff, #2ecc71);
+        opacity: 0.4;
+        transition: opacity 0.2s ease, height 0.2s ease;
+    }
+
+    .table-dark-custom tbody tr:hover::after {
+        opacity: 1;
+        height: 3px;
+    }
+
+.price-cell {
+    color: #2ecc71 !important;
+    font-weight: 600;
+}
+
+.price-text {
+    color: #2ecc71 !important;
+    font-weight: 600;
+}
