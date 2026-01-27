@@ -43,7 +43,7 @@
                         <td>@car.Model</td>
                         <td>@car.Year</td>
                         <td>@car.Color</td>
-                        <td class="car-price">€@car.Price.ToString("N2")</td>
+                        <td class="price-text">€@car.Price.ToString("N2")</td>
                         <td class="actions">
                             <a asp-action="Details" asp-route-id="@car.Id" class="btn btn-details-custom btn-sm">Details</a>
                             <a asp-action="Update" asp-route-id="@car.Id" class="btn btn-update-custom btn-sm">Update</a>

@@ -1,6 +1,6 @@
 ﻿﻿body {
     background: radial-gradient(circle at top left, #1b1b1b, #0f0f0f 70%);
-    color: #eaeaea;
+    color: #e0e0e0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -191,6 +191,11 @@ footer {
         font-weight: 600;
         color: #fff;
     }
+    /*INDEX PRICE sunniviisiline käsitlemine */
+    .table-dark-custom td.price-text {
+        color: #51cf66 !important; /* roheline */
+        font-weight: 600;
+    }
 
     .table-dark-custom td {
         padding: 13px;
@@ -294,4 +299,45 @@ footer {
 .price-text {
     color: #2ecc71 !important;
     font-weight: 600;
+}
+
+/* FORCE DARK BACKGROUND EVERYWHERE */
+html, body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top left, #1b1b1b, #0f0f0f 70%) !important;
+}
+
+main {
+    min-height: calc(100vh - 120px); 
+    background: radial-gradient(circle at top left, #1b1b1b, #0f0f0f 70%) !important;
+}
+
+.container {
+    background: transparent !important;
+}
+
+    main label,
+    .form-label,
+    dt {
+        color: #9ca3af !important;
+        font-weight: 600;
+    }
+
+
+dd {
+    color: #f1f5f9 !important;
+}
+
+
+.text-muted,
+.form-text {
+    color: #9ca3af !important;
+}
+
+.alert,
+.alert-warning,
+.alert-danger {
+    background: #2a2a2a !important;
+    color: #ffffff !important;
+    border-color: #444 !important;
 }
