@@ -125,6 +125,30 @@ namespace CAR.Controllers
             TempData["SuccessMessage"] = $"Car '{result.Make} {result.Model}' updated successfully!";
             return RedirectToAction(nameof(Index));
         }
+        // GET: /Cars/Details
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            var car = await _carService.GetAsync(id);
 
+            if (car == null)
+            {
+                return NotFound();
+            }
+
+            var vm = new CarViewModel
+            {
+                Id = car.Id,
+                Make = car.Make,
+                Model = car.Model,
+                Year = car.Year,
+                Color = car.Color,
+                Price = car.Price,
+                CreatedAt = car.CreatedAt,
+                ModifiedAt = car.ModifiedAt
+            };
+
+            return View(car);
+        }
     }
 }

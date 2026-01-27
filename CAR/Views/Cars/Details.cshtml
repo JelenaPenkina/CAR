@@ -1,0 +1,46 @@
+﻿@model CAR.Core.Domain.Car
+
+@{
+    ViewData["Title"] = "Car Details";
+}
+
+<h1>Car Details</h1>
+
+<hr />
+
+<div>
+    <dl class="dl-horizontal">
+        <dt class="col-sm-3">ID:</dt>
+        <dd class="col-sm-9">@Model.Id</dd>
+
+        <dt class="col-sm-3">Make:</dt>
+        <dd class="col-sm-9">@Model.Make</dd>
+
+        <dt class="col-sm-3">Model:</dt>
+        <dd class="col-sm-9">@Model.Model</dd>
+
+        <dt class="col-sm-3">Year:</dt>
+        <dd class="col-sm-9">@Model.Year</dd>
+
+        <dt class="col-sm-3">Color:</dt>
+        <dd class="col-sm-9">@Model.Color</dd>
+
+        <dt class="col-sm-3">Price:</dt>
+        <dd class="col-sm-10 price-text">€@Model.Price.ToString("N2")</dd>
+
+        <dt class="col-sm-3">Created:</dt>
+        <dd class="col-sm-9">@Model.CreatedAt.ToString("yyyy-MM-dd HH:mm")</dd>
+
+        <dt class="col-sm-3">Last Modified:</dt>
+        <dd class="col-sm-9">@Model.ModifiedAt.ToString("yyyy-MM-dd HH:mm")</dd>
+    </dl>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Update" asp-route-id="@Model.Id" class="btn btn-warning">
+        <i class="bi bi-pencil"></i> Update
+    </a>
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Back
+    </a>
+</div>
