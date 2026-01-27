@@ -3,8 +3,9 @@ using CAR.Core.Dto;
 
 namespace CAR.Core.Interface
 {
-    public class ICarService
+    public interface ICarService
     {
+        Task<Car> Create(CarDto dto);
 
     }
 }

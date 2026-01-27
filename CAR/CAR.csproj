@@ -10,4 +10,8 @@
     <ProjectReference Include="..\CAR.Data\CAR.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Cars\" />
+  </ItemGroup>
+
 </Project>

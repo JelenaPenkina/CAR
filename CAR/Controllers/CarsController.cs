@@ -1,5 +1,7 @@
-﻿using CAR.Core.Interface;
+﻿using CAR.Core.Dto;
+using CAR.Core.Interface;
 using CAR.Data;
+using CAR.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +22,45 @@ namespace CAR.Controllers
         {
             var cars = await _context.Cars.ToListAsync();
             return View(cars);
+        }
+
+        // GET: /Cars/Create
+        public IActionResult Create()
+        {
+            var vm = new CarViewModel();
+            return View(vm);
+        }
+
+        // POST:/Cars/Create
+        [HttpPost]
+        public async Task<IActionResult> Create(CarViewModel vm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(vm);
+            }
+
+            var dto = new CarDto
+            {
+                Id = vm.Id,
+                Make = vm.Make,
+                Model = vm.Model,
+                Year = vm.Year,
+                Color = vm.Color,
+                Price = vm.Price,
+                CreatedAt = DateTime.Now,
+                ModifiedAt = DateTime.Now
+            };
+
+            var result = await _carService.Create(dto);
+
+            if (result == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            TempData["SuccessMessage"] = "Car created successfully!";
+            return RedirectToAction(nameof(Index));
         }
 
     }
